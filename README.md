@@ -2,10 +2,10 @@
 
 # OKR Doing Agent
 
-**Turn your goals into daily execution.**
+**Stop tracking goals. Start doing them.**
 
 一个运行在 **Codex / Claude Code** 上的 OKR 执行 Agent。
-它不帮你"写"目标,它帮你"做到"。
+不追踪目标,只交付行动。
 
 `OKR` · `Doing Agent` · `Codex Plugin` · `Claude Code Plugin` · `Logseq` · `Personal Operating System`
 
