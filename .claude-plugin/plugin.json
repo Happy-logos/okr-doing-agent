@@ -1,0 +1,13 @@
+{
+  "name": "okr-doing-agent",
+  "version": "0.1.0",
+  "description": "Install a local Logseq OKR Doing system, inventory old OKR assets read-only, and plan migration safely with preview-and-confirm.",
+  "author": {
+    "name": "Happy Logos",
+    "email": "chsmalltaoist@gmail.com"
+  },
+  "homepage": "https://github.com/Happy-logos/okr-doing-agent",
+  "repository": "https://github.com/Happy-logos/okr-doing-agent",
+  "license": "MIT",
+  "keywords": ["okr", "logseq", "productivity", "goal-setting", "doing"]
+}

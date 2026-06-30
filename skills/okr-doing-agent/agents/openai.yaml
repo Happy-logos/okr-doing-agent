@@ -1,0 +1,4 @@
+interface:
+  display_name: "OKR Doing Agent"
+  short_description: "OKR 做到系统入口：安装新系统、盘点旧资产、规划迁移"
+  default_prompt: "用 OKR Doing Agent 帮我做 OKR 系统安装、OKR 资产盘点，或 OKR 资产迁移。"

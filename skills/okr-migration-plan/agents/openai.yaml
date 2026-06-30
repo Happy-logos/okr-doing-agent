@@ -1,0 +1,4 @@
+interface:
+  display_name: "OKR 资产迁移"
+  short_description: "基于资产盘点，陪你分批迁移融合旧 OKR 资产进新系统"
+  default_prompt: "Use $okr-migration-plan to migrate old OKR assets into the new system from an inventory report with previews and confirmation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OKR 资产盘点"
+  short_description: "只读扫描旧个人 OKR 资产并生成迁移地图与风险报告"
+  default_prompt: "Use $okr-assets-inventory to scan my old personal OKR folder and generate a read-only migration map."

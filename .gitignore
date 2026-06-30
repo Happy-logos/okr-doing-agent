@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# iCloud / editor conflict copies
+* 2.*
+* 2.py
+*.tmp
+
+# Local env
+.venv/
+venv/
+.env

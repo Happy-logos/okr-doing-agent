@@ -1,0 +1,4 @@
+interface:
+  display_name: "OKR 系统安装"
+  short_description: "预览冲突检查并安装十年尺度的本地 Logseq OKR 系统"
+  default_prompt: "Use $okr-system-install to preview and install a local Logseq OKR system."

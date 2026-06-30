@@ -1,0 +1,21 @@
+{
+  "name": "candobear",
+  "owner": {
+    "name": "Happy Logos",
+    "email": "chsmalltaoist@gmail.com"
+  },
+  "metadata": {
+    "description": "CandoBear plugins for OKR doing and personal productivity.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "okr-doing-agent",
+      "source": "./",
+      "description": "Install a local Logseq OKR Doing system, inventory old OKR assets read-only, and plan migration safely.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": ["okr", "logseq", "productivity"]
+    }
+  ]
+}
