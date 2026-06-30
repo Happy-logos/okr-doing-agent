@@ -118,12 +118,21 @@ okr-doing-agent/
 
 ### Claude Code
 
+终端 CLI(任何环境都能用,推荐):
+
 ```bash
+claude plugin marketplace add Happy-logos/okr-doing-agent
+claude plugin install okr-doing-agent@candobear
+```
+
+或在 Claude Code 交互界面里(若该环境支持 `/plugin`):
+
+```text
 /plugin marketplace add Happy-logos/okr-doing-agent
 /plugin install okr-doing-agent@candobear
 ```
 
-然后对它说「帮我安装 OKR 系统」即可触发。
+安装后**重启 Claude Code** 加载 skills,然后对它说「帮我安装 OKR 系统」即可触发。
 
 ### Codex
 
