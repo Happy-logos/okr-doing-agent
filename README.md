@@ -2,7 +2,7 @@
 
 # OKR Doing Agent
 
-**Stop tracking goals. Start doing them.**
+**Don't just track your OKRs. Do them.**
 
 一个运行在 **Codex / Claude Code** 上的 OKR 执行 Agent。
 OKR 不止追踪,更要做到。
