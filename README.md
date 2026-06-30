@@ -5,7 +5,7 @@
 **Stop tracking goals. Start doing them.**
 
 一个运行在 **Codex / Claude Code** 上的 OKR 执行 Agent。
-不追踪目标,只交付行动。
+OKR 不止追踪,更要做到。
 
 `OKR` · `Doing Agent` · `Codex Plugin` · `Claude Code Plugin` · `Logseq` · `Personal Operating System`
 
