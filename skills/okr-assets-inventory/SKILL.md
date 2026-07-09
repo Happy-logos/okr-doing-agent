@@ -1,6 +1,6 @@
 ---
 name: okr-assets-inventory
-description: Use when the user wants to scan, inventory, audit, or plan migration for an existing local personal OKR folder or old OKR system. This skill only reads local files, classifies OKR assets such as decade plans, annual OKRs, projects, reviews, templates, resources, events, and journals, then produces an OKR asset map and migration planning report. Use for "OKR 资产盘点", old personal OKR folders, migration maps, and fusion planning into OKR Doing Agent. Do not use for coaching a user's current OKR quality, project strategy, or personal blockers.
+description: Use when the user wants to scan, inventory, audit, or plan migration for an existing local personal OKR folder, prepared readable Yinxiang/Evernote exports, or old OKR system. This skill only reads local files, classifies OKR assets such as decade plans, annual OKRs, projects, reviews, templates, resources, events, and journals, then produces an OKR asset map and migration planning report. Use for "OKR 资产盘点", old personal OKR folders, prepared ENML/HTML export folders, migration maps, and fusion planning into OKR Doing Agent. If the user still needs to export or validate 印象笔记/Evernote/.notes material, route to yinxiang-enml-export first. Do not use for coaching a user's current OKR quality, project strategy, or personal blockers.
 ---
 
 # OKR 资产盘点
@@ -15,6 +15,7 @@ It should answer:
 
 ```text
 旧 OKR 文件夹里有什么?
+可读的印象笔记 ENML / HTML 导出里有什么?
 哪些资产能接进新 OKR OS?
 哪些适合归档?
 哪些需要人工确认?
@@ -37,6 +38,7 @@ Those belong to a future OKR Coach / consultation workflow.
 - Read only. Do not write into the old folder or the new Logseq graph.
 - Do not move, rename, delete, normalize, or rewrite user files.
 - Do not copy private OKR content into public docs.
+- Do not parse encrypted `.notes` as a migration source; use `$yinxiang-enml-export` first when export readability is unclear.
 - Prefer file counts, titles, paths, short excerpts, and classification labels.
 - If migration is requested, produce a plan or dry-run report only.
 - Stop before apply/write behavior unless a separate migration skill and explicit confirmation exist.
@@ -45,7 +47,8 @@ Those belong to a future OKR Coach / consultation workflow.
 
 1. Ask for the old OKR folder path if it is missing.
 2. Optionally ask for the new Logseq graph path if the user wants conflict/routing checks.
-3. Run the bundled script:
+3. If the source is 印象笔记 / Evernote and readable ENML or HTML has not been prepared, stop and route to `$yinxiang-enml-export`.
+4. Run the bundled script:
 
 ```bash
 python3 scripts/okr_assets_inventory.py --source "<old OKR folder>"
@@ -61,8 +64,8 @@ python3 scripts/okr_assets_inventory.py \
 
 Resolve `scripts/okr_assets_inventory.py` relative to this `SKILL.md`.
 
-4. Read the report and summarize the highest-signal migration map.
-5. If the user wants next steps, propose a migration plan. Do not write files.
+5. Read the report and summarize the highest-signal migration map.
+6. If the user wants next steps, propose a migration plan. Do not write files.
 
 ## Report Shape
 

@@ -7,7 +7,7 @@
 一个运行在 **Codex / Claude Code** 上的 OKR 执行 Agent。
 OKR 不止追踪,更要做到。
 
-`OKR` · `Doing Agent` · `Codex Plugin` · `Claude Code Plugin` · `Logseq` · `Personal Operating System`
+`OKR` · `Doing Agent` · `Codex Plugin` · `Claude Code Plugin` · `Logseq` · `Yinxiang / Evernote` · `Personal Operating System`
 
 </div>
 
@@ -42,11 +42,12 @@ OKR 是壳,做到是内核,真实问题是入口,一周行动是交付。
 
 ```text
 okr-doing-agent/
-├── skills/                 # Agent 的四个能力(= 真正的 prompts)
+├── skills/                 # Agent 的能力(= 真正的 prompts)
 │   ├── okr-doing-agent/    #   主入口:理解你想做哪件事,再路由
 │   ├── okr-system-install/ #   新系统安装(dry-run 预览 → 确认 → 写入)
+│   ├── yinxiang-enml-export/#  印象笔记 / Evernote ENML、HTML、.notes 来源准备
 │   ├── okr-assets-inventory/#  旧资产只读盘点
-│   └── okr-migration-plan/ #   迁移融合方案(只出方案,不写入)
+│   └── okr-migration-plan/ #   迁移融合(预览 → 确认 → 写入)
 ├── scripts/                # 确定性安装器(dry-run / --apply)
 ├── templates/logseq/       # 系统页面 + 可调用模板包
 ├── .claude-plugin/         # Claude Code 清单
@@ -70,13 +71,13 @@ okr-doing-agent/
 | 复盘是 Bayesian Update | 复盘=用新证据更新判断,不是给自己定罪 |
 | 失败是黑匣子数据 | 失败和意外进入"大事件"页,成为下一次决策的输入 |
 
-它还有明确的 **stop rules**:盘点阶段**永不写文件**;安装遇到同名页面冲突会**停下来**,绝不覆盖你已有内容;迁移只出方案,真实写入需要你单独确认。
+它还有明确的 **stop rules**:来源准备和盘点阶段**永不写目标图谱**;安装遇到同名页面冲突会**停下来**,绝不覆盖你已有内容;迁移必须先出预览,真实写入需要你单独确认。
 
 > 安全设计不是附加项,而是这个 Agent 敢碰你真实知识库的前提。
 
 ---
 
-## Workflow · 三条工作流
+## Workflow · 四条工作流
 
 ### 1 · 安装一套完整的 OKR 系统
 
@@ -86,15 +87,21 @@ okr-doing-agent/
 
 ![OKR Dashboard](http://img.candobear.com/2026-06-29-d04dc9ab6ee4e1281e0955a5ec5c433f.png)
 
-### 2 · 盘点你的 OKR 旧资产
+### 2 · 准备历史来源素材
+
+如果你的 OKR 历史在印象笔记 / Evernote 里,Agent 先不急着迁移。`yinxiang-enml-export` 会帮你判断哪些来源真的可读:本地 `content.enml`、单条 HTML 导出、HTML resources,以及只能作为备份证据的 `.notes`。
+
+它只做来源准备和校验:确认文件数量、正文、附件目录和阻塞项。准备好以后,再交给资产盘点或迁移预览。
+
+### 3 · 盘点你的 OKR 旧资产
 
 我们或多或少都在 Logseq 里折腾过一套自己的目标管理,有的半途而废,有的太复杂被绕晕。`OKR 资产盘点` 对旧文件夹做一次**安全的只读扫描**,生成一份「OKR 资产地图」:哪些还值得用、哪些已经暂停、哪些刚好是你重新出发的起点。
 
 ![资产地图](http://img.candobear.com/2026-06-29-bea7c652c924a36e8e608864ec32f402.png)
 
-### 3 · 迁移旧资产,接入新系统
+### 4 · 迁移旧资产,接入新系统
 
-目标管理最怕的不是没系统,是系统一升级旧东西全乱套。`OKR 资产迁移` 基于盘点结果,生成一份分批迁移方案:哪些无缝接入、哪些直接归档、哪些需要你人工确认。**Agent 出方案,你做判断和验收。**
+目标管理最怕的不是没系统,是系统一升级旧东西全乱套。`OKR 资产迁移` 基于盘点结果,生成一份分批迁移预览:哪些无缝接入、哪些直接归档、哪些需要你人工确认。**Agent 先出预览,你确认后再写入。**
 
 ![迁移后的年度 OKR](http://img.candobear.com/2026-06-30-8ed2d05ea076433786cc2101cc233a44.png)
 
@@ -142,14 +149,14 @@ git clone https://github.com/Happy-logos/okr-doing-agent.git
 ```
 
 加载后用 `$okr-doing-agent` 进主入口,或直接调用
-`$okr-system-install` / `$okr-assets-inventory` / `$okr-migration-plan`。
+`$okr-system-install` / `$yinxiang-enml-export` / `$okr-assets-inventory` / `$okr-migration-plan`。
 
 ### 第一次怎么用
 
 1. 选 **OKR 系统安装**,只回答一个问题:你的 Logseq 图谱路径。
 2. 看 dry-run 预览(生成哪些页面、建立哪些关系、有无冲突)。
 3. 确认后 apply 写入。
-4. 装好后,再决定要不要盘点旧资产、做迁移。
+4. 装好后,再决定要不要准备印象笔记素材、盘点旧资产、做迁移。
 
 > 首次安装不会问你的目标、卡点或项目 —— 先把容器装好,再谈做什么。
 
@@ -159,7 +166,7 @@ git clone https://github.com/Happy-logos/okr-doing-agent.git
 
 - [ ] Obsidian / 纯 Markdown 安装
 - [ ] 写入前自动备份策略
-- [ ] 迁移阶段的真实写入(目前只出方案)
+- [ ] 更完整的印象笔记批量导出自动化
 - [ ] 周/月复盘的提醒回路
 
 ## About

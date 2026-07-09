@@ -1,0 +1,4 @@
+interface:
+  display_name: "印象笔记 ENML 导出"
+  short_description: "盘点印象笔记导出并准备可迁移 ENML/HTML 素材"
+  default_prompt: "Use $yinxiang-enml-export to inventory Yinxiang/Evernote exports and prepare readable ENML or HTML migration sources."

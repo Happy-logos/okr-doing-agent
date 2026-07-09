@@ -3,6 +3,21 @@
 All notable changes to OKR Doing Agent are documented here.
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [0.1.1] - 2026-07-09
+
+### Added
+- **印象笔记 ENML / HTML 导出** `yinxiang-enml-export`:盘点印象笔记 / Evernote 的 `content.enml`、单条 HTML 导出、`.resources` 附件目录和 `.notes` 备份,确认哪些素材可作为迁移源。
+- 主入口 `okr-doing-agent` 增加“历史来源准备”入口,遇到 `印象笔记`、`Evernote`、`Yinxiang`、`ENML`、`HTML 导出`、`.notes` 时路由到 `yinxiang-enml-export`。
+- 插件 metadata 增加 `yinxiang`、`evernote`、`enml` 相关描述和关键词,便于在 Codex / Claude Code 插件界面中发现。
+
+### Changed
+- README 的工作流从三条扩展为四条:系统安装、历史来源准备、资产盘点、资产迁移。
+- 迁移说明改为“预览 -> 确认 -> 写入”,与当前迁移 skill 的确认写入能力保持一致。
+
+### Safety
+- 印象笔记来源准备不写入 Logseq,不删除、不移动、不覆盖旧导出。
+- `.notes` 批量导出默认视为备份证据；若正文为加密内容,不作为直接迁移源。
+
 ## [0.1.0] - 2026-06-30
 
 首个公开版本 —— 同时兼容 Claude Code 与 Codex 的双插件。
