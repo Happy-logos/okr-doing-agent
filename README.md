@@ -159,6 +159,26 @@ git clone https://github.com/Happy-logos/okr-doing-agent.git
 
 ---
 
+## Disclaimer / 免责声明
+
+OKR Doing Agent is an independent, unofficial tool.
+
+The Yinxiang / Evernote source-preparation skill only helps users process files they have exported or selected locally, such as readable ENML / HTML files and related resource folders.
+
+It does not log in to Yinxiang / Evernote, bypass access controls, decrypt protected files, or claim any official partnership, endorsement, or certification from Yinxiang, Evernote, Logseq, GitHub, OpenAI, Anthropic, or related services.
+
+Users are responsible for ensuring they have the right to process and migrate the materials they provide.
+
+OKR Doing Agent 是一个独立的非官方工具。
+
+其中的 Yinxiang / Evernote 来源准备 skill 仅用于处理用户自行导出或主动选择的本地文件,例如可读的 ENML / HTML 文件及相关资源目录。
+
+本工具不会登录印象笔记 / Evernote,不绕过访问权限,不解密受保护文件,也不声称与印象笔记、Evernote、Logseq、GitHub、OpenAI、Anthropic 等服务存在官方合作、认证或背书关系。
+
+用户需要自行确认其对所处理和迁移的资料拥有相应权利。
+
+---
+
 ## Roadmap
 
 - [ ] Obsidian / 纯 Markdown 安装

@@ -33,6 +33,46 @@ It does not own:
 
 After readable material is prepared, hand off to `okr-assets-inventory` for asset mapping or `okr-migration-plan` for a write preview.
 
+## Safety Boundaries / 安全边界
+
+This skill is designed as a local-first export cleaning helper.
+
+It will:
+
+- read only user-selected export folders;
+- parse readable ENML / HTML files;
+- preserve resource folder references;
+- mark encrypted `.notes` files as backup-only;
+- generate source-preparation reports, migration handoff notes, and audit records.
+
+It will not:
+
+- log in to Yinxiang / Evernote;
+- call private or unofficial APIs;
+- decrypt protected files;
+- upload raw notes or attachments;
+- overwrite source files;
+- write into the target OKR system without user confirmation.
+
+这个 skill 是一个本地优先的导出清洗工具。
+
+它会：
+
+- 只读取用户指定的导出目录；
+- 解析可读的 ENML / HTML 文件；
+- 保留资源附件目录引用；
+- 将加密或不可读的 `.notes` 文件标记为仅备份；
+- 生成迁移前素材清单、交接记录和审计记录。
+
+它不会：
+
+- 登录印象笔记 / Evernote；
+- 调用私有或非官方接口；
+- 解密受保护文件；
+- 上传原始笔记或附件；
+- 覆盖源文件；
+- 未经用户确认写入目标 OKR 系统。
+
 ## Source Rules
 
 Prefer sources in this order:

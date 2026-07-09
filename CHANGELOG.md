@@ -3,6 +3,15 @@
 All notable changes to OKR Doing Agent are documented here.
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [0.1.3] - 2026-07-09
+
+### Docs
+- README 增加 `Disclaimer / 免责声明`,说明 OKR Doing Agent 是独立非官方工具,只处理用户本地导出或主动选择的文件。
+- `yinxiang-enml-export` 增加 `Safety Boundaries / 安全边界`,明确本地优先、只读校验、资源目录保留、`.notes` 备份-only、不会登录或解密。
+
+### Safety
+- 明确不登录印象笔记 / Evernote,不调用私有或非官方接口,不上传原始笔记或附件,不绕过访问控制,不声称与相关服务存在官方合作、认证或背书。
+
 ## [0.1.2] - 2026-07-09
 
 ### Changed

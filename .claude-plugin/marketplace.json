@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "CandoBear plugins for OKR doing and personal productivity.",
-    "version": "0.1.2"
+    "version": "0.1.3"
   },
   "plugins": [
     {
       "name": "okr-doing-agent",
       "source": "./",
       "description": "Install a local Logseq OKR Doing system, inventory local and Yinxiang/Evernote OKR assets, and migrate safely.",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "category": "productivity",
       "keywords": ["okr", "logseq", "productivity", "yinxiang", "evernote", "enml"]
     }
