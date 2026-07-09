@@ -1,7 +1,7 @@
 {
   "name": "okr-doing-agent",
-  "version": "0.1.1",
-  "description": "Install a local Logseq OKR Doing system, prepare Yinxiang/Evernote exports, inventory old OKR assets read-only, and migrate safely with preview-and-confirm.",
+  "version": "0.1.2",
+  "description": "Install a local Logseq OKR Doing system, inventory local and Yinxiang/Evernote OKR assets, and migrate safely with preview-and-confirm.",
   "author": {
     "name": "Happy Logos",
     "email": "chsmalltaoist@gmail.com"

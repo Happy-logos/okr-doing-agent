@@ -45,7 +45,7 @@ okr-doing-agent/
 ├── skills/                 # Agent 的能力(= 真正的 prompts)
 │   ├── okr-doing-agent/    #   主入口:理解你想做哪件事,再路由
 │   ├── okr-system-install/ #   新系统安装(dry-run 预览 → 确认 → 写入)
-│   ├── yinxiang-enml-export/#  印象笔记 / Evernote ENML、HTML、.notes 来源准备
+│   ├── yinxiang-enml-export/#  印象笔记 / Evernote ENML、HTML、.notes 来源校验
 │   ├── okr-assets-inventory/#  旧资产只读盘点
 │   └── okr-migration-plan/ #   迁移融合(预览 → 确认 → 写入)
 ├── scripts/                # 确定性安装器(dry-run / --apply)
@@ -77,31 +77,28 @@ okr-doing-agent/
 
 ---
 
-## Workflow · 四条工作流
+## Workflow · 三件事
 
-### 1 · 安装一套完整的 OKR 系统
+### 1 · OKR 系统安装
 
-把"建页面、打双链、关联年月周项目"这件最折磨人的架构工程,一次交给 Agent。它生成 Dashboard、十年计划、年度 OKR、Q1–Q4、1–12 月、当前周入口,以及一整套可调用模板,**底层双向链接在生成那一刻就已经接通**。
+帮你在 Logseq 里搭起一套个人 OKR 做到系统:Dashboard、十年计划、年度 OKR、季度、月份、当前周入口,以及十年计划 / 年度 OKR / 项目 OKR / 大事件 / daily routine / 周复盘模板。
 
-写入前先给你 dry-run 预览,确认后才落盘。
+底层双向链接在生成那一刻就已经接通。写入前先给你 dry-run 预览,确认后才落盘。
+
 
 ![OKR Dashboard](http://img.candobear.com/2026-06-29-d04dc9ab6ee4e1281e0955a5ec5c433f.png)
 
-### 2 · 准备历史来源素材
+### 2 · OKR 资产盘点
 
-如果你的 OKR 历史在印象笔记 / Evernote 里,Agent 先不急着迁移。`yinxiang-enml-export` 会帮你判断哪些来源真的可读:本地 `content.enml`、单条 HTML 导出、HTML resources,以及只能作为备份证据的 `.notes`。
+盘清两类旧资料:本地 OKR 文件夹里的年度、项目、复盘、模板和资料;以及印象笔记 / Evernote 里的 `content.enml`、HTML、`.resources` 和 `.notes`。必要时,在支持 computer use 的环境里,Agent 可以帮你从印象笔记导出 HTML,并校验可读性。
 
-它只做来源准备和校验:确认文件数量、正文、附件目录和阻塞项。准备好以后,再交给资产盘点或迁移预览。
-
-### 3 · 盘点你的 OKR 旧资产
-
-我们或多或少都在 Logseq 里折腾过一套自己的目标管理,有的半途而废,有的太复杂被绕晕。`OKR 资产盘点` 对旧文件夹做一次**安全的只读扫描**,生成一份「OKR 资产地图」:哪些还值得用、哪些已经暂停、哪些刚好是你重新出发的起点。
+`OKR 资产盘点` 会生成一份「OKR 资产地图」和「可迁移源清单」:哪些还值得用、哪些适合归档、哪些需要人工确认、哪些刚好是你重新出发的起点。
 
 ![资产地图](http://img.candobear.com/2026-06-29-bea7c652c924a36e8e608864ec32f402.png)
 
-### 4 · 迁移旧资产,接入新系统
+### 3 · OKR 资产迁移
 
-目标管理最怕的不是没系统,是系统一升级旧东西全乱套。`OKR 资产迁移` 基于盘点结果,生成一份分批迁移预览:哪些无缝接入、哪些直接归档、哪些需要你人工确认。**Agent 先出预览,你确认后再写入。**
+根据资产盘点结果,Agent 陪你分批把旧资产接进新系统:哪些保留、哪些合并、哪些归档、哪些先不动。每一批都会先给你看清楚,再按确认结果处理。
 
 ![迁移后的年度 OKR](http://img.candobear.com/2026-06-30-8ed2d05ea076433786cc2101cc233a44.png)
 
@@ -156,7 +153,7 @@ git clone https://github.com/Happy-logos/okr-doing-agent.git
 1. 选 **OKR 系统安装**,只回答一个问题:你的 Logseq 图谱路径。
 2. 看 dry-run 预览(生成哪些页面、建立哪些关系、有无冲突)。
 3. 确认后 apply 写入。
-4. 装好后,再决定要不要准备印象笔记素材、盘点旧资产、做迁移。
+4. 装好后,再决定要不要盘点旧资产、整理印象笔记 / Evernote 来源、做迁移。
 
 > 首次安装不会问你的目标、卡点或项目 —— 先把容器装好,再谈做什么。
 

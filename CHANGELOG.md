@@ -3,6 +3,14 @@
 All notable changes to OKR Doing Agent are documented here.
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [0.1.2] - 2026-07-09
+
+### Changed
+- 主入口自我介绍改为三件用户能直接理解的事:OKR 系统安装、OKR 资产盘点、OKR 资产迁移。
+- 将原“历史来源准备”并入公开的“OKR 资产盘点”介绍；内部仍通过 `yinxiang-enml-export` 处理印象笔记 / Evernote 的 `content.enml`、HTML、`.resources`、`.notes` 来源校验。
+- 明确说明:必要时,在支持 computer use 的环境里,Agent 可以帮用户从印象笔记导出 HTML 并校验可读性。
+- README、Codex 插件元数据、Claude marketplace 元数据同步改为三件事版本。
+
 ## [0.1.1] - 2026-07-09
 
 ### Added
