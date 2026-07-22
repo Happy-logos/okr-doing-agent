@@ -1,18 +1,24 @@
 {
   "name": "okr-doing-agent",
-  "version": "0.1.3",
-  "description": "Install a local OKR Doing system, inventory old OKR assets from local folders and Yinxiang/Evernote sources, and guide migration safely.",
+  "version": "0.1.4+codex.20260722063134",
+  "description": "Install and migrate a local OKR Doing system, or turn completed work into copy-ready Daily Doing Markdown.",
   "author": {
     "name": "Local developer"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "OKR Doing Agent",
-    "shortDescription": "Install OKR OS, inventory old assets, and migrate safely.",
-    "longDescription": "OKR Doing Agent provides three user-facing services: OKR 系统安装 for setting up a personal Logseq OKR Doing system, OKR 资产盘点 for local old OKR folders plus Yinxiang/Evernote content.enml, HTML, .resources, and .notes sources, and OKR 资产迁移 for guided migration/fusion from the asset map into the new system with preview and explicit confirmation.",
+    "shortDescription": "Install or migrate OKR OS, and draft Daily Doing Markdown.",
+    "longDescription": "OKR Doing Agent installs a personal Logseq OKR Doing system, inventories and migrates old OKR assets safely, and turns completed work into copy-ready Daily Doing Markdown.",
     "developerName": "Happy Logos",
     "category": "Productivity",
-    "capabilities": ["Logseq OKR install", "Yinxiang/Evernote source validation", "OKR asset inventory", "confirmed migration"],
-    "defaultPrompt": "用 OKR Doing Agent 帮我做 OKR 系统安装、OKR 资产盘点，或 OKR 资产迁移。"
+    "capabilities": [
+      "Logseq OKR install",
+      "Yinxiang/Evernote source validation",
+      "OKR asset inventory",
+      "confirmed migration",
+      "Daily Doing Markdown drafting"
+    ],
+    "defaultPrompt": "\u7528 OKR Doing Agent \u5e2e\u6211\u5b89\u88c5\u6216\u8fc1\u79fb OKR \u7cfb\u7edf\uff0c\u6216\u8005\u628a\u521a\u5b8c\u6210\u7684\u5de5\u4f5c\u6574\u7406\u6210\u53ef\u76f4\u63a5\u590d\u5236\u7684 Daily Doing\u3002"
   }
 }

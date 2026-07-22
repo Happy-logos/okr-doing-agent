@@ -44,6 +44,7 @@ OKR 是壳,做到是内核,真实问题是入口,一周行动是交付。
 okr-doing-agent/
 ├── skills/                 # Agent 的能力(= 真正的 prompts)
 │   ├── okr-doing-agent/    #   主入口:理解你想做哪件事,再路由
+│   ├── draft-daily-doing/  #   收尾:把完成的工作整理成可复制 Markdown
 │   ├── okr-system-install/ #   新系统安装(dry-run 预览 → 确认 → 写入)
 │   ├── yinxiang-enml-export/#  印象笔记 / Evernote ENML、HTML、.notes 来源校验
 │   ├── okr-assets-inventory/#  旧资产只读盘点

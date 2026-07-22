@@ -3,6 +3,15 @@
 All notable changes to OKR Doing Agent are documented here.
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [0.1.4] - 2026-07-13
+
+### Added
+- 新增 `draft-daily-doing` skill:将当前对话中已经完成的工作整理成可直接复制的 Daily Doing Markdown。
+
+### Changed
+- 主入口识别“整理成今天的 Daily Doing / 收尾记录 / 做到记录 / 直接复制 Markdown”等请求并路由到新 skill。
+- Daily Doing 默认只输出一个 fenced `markdown` 代码块;禁止渲染引用块、重复解释和把讨论方案写成已完成事实。
+
 ## [0.1.3] - 2026-07-09
 
 ### Docs

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily Doing 收尾"
+  short_description: "把刚完成的一轮工作整理成可直接复制的 Daily Doing Markdown"
+  default_prompt: "Use $draft-daily-doing to turn this completed work into copy-ready Daily Doing Markdown."
