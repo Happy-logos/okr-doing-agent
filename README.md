@@ -152,16 +152,25 @@ claude plugin install okr-doing-agent@candobear
 
 ### Codex
 
+从 [GitHub Releases](https://github.com/Happy-logos/okr-doing-agent/releases/latest) 下载最新的
+`okr-doing-agent-codex-marketplace-<version>.zip`（或 `.tar.gz`），解压后执行：
+
 ```bash
-git clone https://github.com/Happy-logos/okr-doing-agent.git
-# 将克隆目录作为插件源加入你已配置的本地 Codex marketplace，
-# 再安装 okr-doing-agent；插件清单见 .codex-plugin/plugin.json。
+codex plugin marketplace add /absolute/path/to/okr-doing-agent-codex-marketplace-<version>
+codex plugin add okr-doing-agent@happy-logos-okr
 ```
 
-加载后用 `$okr-doing-agent` 进主入口,或直接调用
+安装后新建一个 Codex 对话。用 `$okr-doing-agent` 进主入口,或直接调用
 `$okr-system-install` / `$yinxiang-enml-export` / `$okr-assets-inventory` / `$okr-migration-plan` / `$okr-review`。
 
-已经通过 Git clone 安装的用户，更新时先在插件目录运行 `git pull`，再从原 marketplace 重新安装一次 Plugin，并开启新对话加载新版 Skills。
+通过 Release 包更新时，先移除旧的发布源，再下载并解压新版包，重新执行上面的两条安装命令：
+
+```bash
+codex plugin remove okr-doing-agent@happy-logos-okr
+codex plugin marketplace remove happy-logos-okr
+```
+
+如果你已经通过自己的本地 Marketplace 连接了 Git clone，只需 `git pull`，再从原 Marketplace 重新安装一次 Plugin。两种更新方式都需要新建对话，才能加载新版 Skills。
 
 ### 第一次怎么用
 
