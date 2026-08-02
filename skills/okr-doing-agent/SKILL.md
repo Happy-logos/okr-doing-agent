@@ -1,6 +1,6 @@
 ---
 name: okr-doing-agent
-description: Main entrypoint for OKR Doing Agent. Use when the user wants to install a local Logseq OKR system, inventory old OKR folders or Yinxiang/Evernote exports, plan a guided migration, or turn a completed work session into a copy-ready Daily Doing Markdown entry. Route installation to okr-system-install, source validation to yinxiang-enml-export, local asset inventory to okr-assets-inventory, migration to okr-migration-plan, and requests such as 整理成今天的 Daily Doing, 收尾记录, 做到记录, or 直接复制 Markdown to draft-daily-doing.
+description: Main entrypoint for OKR Doing Agent. Use when the user wants to install a local Logseq OKR system, inventory old OKR folders or Yinxiang/Evernote exports, plan a guided migration, review a week/month/quarter/year from real Dashboard or local records, or turn a completed work session into a copy-ready Daily Doing Markdown entry. Route periodic review and requests such as 开始月复盘, 本周我做了什么, or 生成复盘一页纸 to okr-review; route installation to okr-system-install, source validation to yinxiang-enml-export, local asset inventory to okr-assets-inventory, migration to okr-migration-plan, and Daily Doing drafting to draft-daily-doing.
 ---
 
 # OKR Doing Agent
@@ -17,17 +17,34 @@ OKR 资产盘点
 OKR 资产迁移
 ```
 
-It also supports one lightweight daily operation:
+It also supports two ongoing operations:
 
 ```text
 Daily Doing 收尾
+周期复盘
 ```
 
 Daily Doing 收尾 turns work already completed in the conversation into raw, copy-ready Markdown. It does not write to the user's real OKR files or Dashboard by default.
 
+周期复盘 reads authorized real records, separates fact from Coach insight and user decision, and produces a confirmed 《复盘一页纸》 plus a host writeback preview. Dashboard remains preview-only. Logseq may update only the managed review block of the authorized period page after a separate explicit confirmation, source-hash recheck, and backup.
+
 ## Entry Routing
 
 Route the most specific intent first.
+
+### 周 / 月 / 季 / 年复盘
+
+If the user says any of the following or equivalent wording, use `$okr-review` immediately:
+
+- 开始 7 月复盘 / 开始月复盘
+- 本周我做了什么
+- 做季度复盘 / 年度回看
+- 汇集 Daily Doing、每周 3 Things、To-do 或项目记录
+- 继续上次复盘
+- 生成复盘一页纸
+- 用 Dashboard JSON 或本地 Logseq 记录做复盘
+
+Do not reduce a review request to asset inventory. Asset inventory maps old material for migration; `$okr-review` uses current-period evidence to form understanding and decisions.
 
 ### Daily Doing
 
@@ -72,6 +89,7 @@ If none of the routes above match, offer:
 2. 盘点旧 OKR 或印象笔记 / Evernote 资产
 3. 分批迁移旧资产
 4. 把刚完成的一轮工作整理成可直接复制的 Daily Doing Markdown
+5. 从真实记录开始一次周、月、季或年度复盘
 
 你想先做哪一件？
 ```
@@ -92,6 +110,9 @@ Stop before writing when:
 - the user asks for fully automatic whole-folder migration
 - the user asks the Agent to write Daily Doing into real files or an external app without explicit authorization and an available writable path
 - there is not enough evidence to distinguish completed work from proposed work
+- a review writeback would silently modify a formal Dashboard, Logseq graph, objective, KR, project, Stage, 3 Things, Daily Doing, or To-do
+- a Logseq review apply lacks a confirmed report, reviewed diff, matching source/proposed hashes, explicit backup directory, or a new write confirmation
+- a review has reached the user's understanding and judgment but is drifting into project implementation
 
 For an ordinary Daily Doing drafting request, generating the copy-ready Markdown is allowed and does not require write confirmation.
 
@@ -104,10 +125,14 @@ This plugin supports:
 - Yinxiang/Evernote ENML, HTML, `.resources`, and `.notes` source validation
 - guided migration/fusion from an inventory report
 - copy-ready Daily Doing Markdown drafting through `$draft-daily-doing`
+- read-only week/month/quarter/year evidence packs, Coach review, and 《复盘一页纸》 through `$okr-review`
+- Dashboard Markdown writeback previews and explicitly confirmed Logseq period-page review-block apply through `$okr-review`
 
 It does not yet:
 
 - write Daily Doing directly into the Dashboard or the user's formal OKR graph
+- apply review reports or model updates directly to Dashboard or project records
+- mutate Logseq objectives, KR, projects, Stage, Work Items, 3 Things, Daily Doing, or To-do from review text
 - support Obsidian installation
 - schedule reminders
 - connect to external services

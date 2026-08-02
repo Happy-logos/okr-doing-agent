@@ -6,16 +6,16 @@
   },
   "metadata": {
     "description": "CandoBear plugins for OKR doing and personal productivity.",
-    "version": "0.1.4"
+    "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "okr-doing-agent",
       "source": "./",
-      "description": "Install or migrate a local OKR Doing system, and draft copy-ready Daily Doing Markdown.",
-      "version": "0.1.4",
+      "description": "Install, migrate, and review a local OKR Doing system with confirmed Logseq writeback.",
+      "version": "1.0.0",
       "category": "productivity",
-      "keywords": ["okr", "logseq", "productivity", "daily-doing", "markdown", "yinxiang", "evernote", "enml"]
+      "keywords": ["okr", "logseq", "productivity", "daily-doing", "review", "coach", "markdown", "yinxiang", "evernote", "enml"]
     }
   ]
 }

@@ -3,6 +3,21 @@
 All notable changes to OKR Doing Agent are documented here.
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [1.0.0] - 2026-08-02
+
+### Added
+- 新增 `okr-review` skill:从用户授权的 Dashboard、项目导出和 Logseq / Markdown 记录中汇集周、月、季、年真实证据,完成事实回放、Coach 洞察、复盘线索与《复盘一页纸》。
+- 新增确定性的 Logseq 写回脚本:定位既有周期页,生成受管复盘块差异预览,在独立确认后执行备份、双哈希复核、原子写入与写后校验。
+- 新增 2026 年 7 月完整复盘样本与 Logseq 写回回归测试。
+
+### Changed
+- 主入口增加周期复盘路由。
+- 新安装的月度页使用稳定 `review-key` 和 `not-started` 受管复盘块。
+
+### Safety
+- Dashboard v0.1 只生成 Markdown 写回预览。
+- Logseq 只更新周期页受管复盘块,不覆盖无 `review-key` 的用户原文,不跟随 `legacy-source`,也不从复盘正文自动修改目标、KR、项目、Stage、Work Item、3 Things、Daily Doing 或 To-do。
+
 ## [0.1.4] - 2026-07-13
 
 ### Added

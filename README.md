@@ -48,7 +48,8 @@ okr-doing-agent/
 │   ├── okr-system-install/ #   新系统安装(dry-run 预览 → 确认 → 写入)
 │   ├── yinxiang-enml-export/#  印象笔记 / Evernote ENML、HTML、.notes 来源校验
 │   ├── okr-assets-inventory/#  旧资产只读盘点
-│   └── okr-migration-plan/ #   迁移融合(预览 → 确认 → 写入)
+│   ├── okr-migration-plan/ #   迁移融合(预览 → 确认 → 写入)
+│   └── okr-review/         #   真实证据复盘(事实 → 洞察 → 一页纸 → 安全写回)
 ├── scripts/                # 确定性安装器(dry-run / --apply)
 ├── templates/logseq/       # 系统页面 + 可调用模板包
 ├── .claude-plugin/         # Claude Code 清单
@@ -56,6 +57,8 @@ okr-doing-agent/
 ```
 
 同一套 `skills/`,**Claude Code 和 Codex 通吃**。
+
+当前稳定版本：**v1.0.0**。它在原有安装、盘点、迁移和 Daily Doing 能力上，新增了完整的周 / 月 / 季 / 年周期复盘，以及经过预览、确认、备份和双哈希校验的 Logseq 受管复盘块写回。
 
 ---
 
@@ -78,7 +81,7 @@ okr-doing-agent/
 
 ---
 
-## Workflow · 三件事
+## Workflow · 四件事
 
 ### 1 · OKR 系统安装
 
@@ -103,15 +106,23 @@ okr-doing-agent/
 
 ![迁移后的年度 OKR](http://img.candobear.com/2026-06-30-8ed2d05ea076433786cc2101cc233a44.png)
 
+### 4 · 周期复盘
+
+从用户授权的 Dashboard JSON、项目导出和 Logseq / Markdown 记录中汇集周、月、季度或年度证据。Agent 先给事实回放和可校准的 Coach 洞察,再陪用户围绕真正值得谈的线索形成自己的认识、判断与下一步,最终生成《复盘一页纸》。
+
+Dashboard 当前只生成 Markdown 写回预览。Logseq 会先定位既有周期页并展示受管复盘块差异;只有用户再次明确确认、源文件哈希未变化且备份成功后,才原位更新该复盘块。它不会从复盘正文自动修改目标、KR、项目、Stage、3 Things、Daily Doing 或 To-do。
+
 ---
 
 ## Examples · 真实样例
 
-想先看它实际长什么样,不必安装。`examples/` 里有脱敏的真实输出:
+想先看它实际长什么样,不必安装。`examples/` 里有经过公开脱敏的方法样本:
 
 - [`examples/01-install-preview.md`](examples/01-install-preview.md) —— 安装前的 dry-run 预览
 - [`examples/02-asset-inventory.md`](examples/02-asset-inventory.md) —— 一份 OKR 资产地图
 - [`examples/03-weekly-review.md`](examples/03-weekly-review.md) —— 一次 Bayesian Update 式周复盘
+- [`examples/okr-review/2026-07-stage-structure-review.md`](examples/okr-review/2026-07-stage-structure-review.md) —— 一条完整复盘线索
+- [`examples/okr-review/2026-07-full-month-review.md`](examples/okr-review/2026-07-full-month-review.md) —— 一份完整月度复盘与一页纸
 
 ---
 
@@ -143,11 +154,14 @@ claude plugin install okr-doing-agent@candobear
 
 ```bash
 git clone https://github.com/Happy-logos/okr-doing-agent.git
-# 将该目录加入 Codex 插件市场,清单见 .codex-plugin/plugin.json
+# 将克隆目录作为插件源加入你已配置的本地 Codex marketplace，
+# 再安装 okr-doing-agent；插件清单见 .codex-plugin/plugin.json。
 ```
 
 加载后用 `$okr-doing-agent` 进主入口,或直接调用
-`$okr-system-install` / `$yinxiang-enml-export` / `$okr-assets-inventory` / `$okr-migration-plan`。
+`$okr-system-install` / `$yinxiang-enml-export` / `$okr-assets-inventory` / `$okr-migration-plan` / `$okr-review`。
+
+已经通过 Git clone 安装的用户，更新时先在插件目录运行 `git pull`，再从原 marketplace 重新安装一次 Plugin，并开启新对话加载新版 Skills。
 
 ### 第一次怎么用
 
@@ -183,9 +197,9 @@ OKR Doing Agent 是一个独立的非官方工具。
 ## Roadmap
 
 - [ ] Obsidian / 纯 Markdown 安装
-- [ ] 写入前自动备份策略
+- [ ] 安装与迁移写入前的统一备份策略
 - [ ] 更完整的印象笔记批量导出自动化
-- [ ] 周/月复盘的提醒回路
+- [ ] 周/月/季/年复盘提醒与 Dashboard 宿主接入
 
 ## About
 

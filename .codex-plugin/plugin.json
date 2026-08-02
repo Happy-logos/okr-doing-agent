@@ -1,15 +1,20 @@
 {
   "name": "okr-doing-agent",
-  "version": "0.1.4+codex.20260722063134",
-  "description": "Install and migrate a local OKR Doing system, or turn completed work into copy-ready Daily Doing Markdown.",
+  "version": "1.0.0",
+  "description": "Install and migrate a local OKR Doing system, review real periodic evidence, and safely write confirmed one-page reports to Logseq.",
   "author": {
-    "name": "Local developer"
+    "name": "Happy Logos",
+    "url": "https://github.com/Happy-logos"
   },
+  "homepage": "https://github.com/Happy-logos/okr-doing-agent",
+  "repository": "https://github.com/Happy-logos/okr-doing-agent",
+  "license": "MIT",
+  "keywords": ["okr", "logseq", "productivity", "review", "daily-doing", "migration"],
   "skills": "./skills/",
   "interface": {
     "displayName": "OKR Doing Agent",
-    "shortDescription": "Install or migrate OKR OS, and draft Daily Doing Markdown.",
-    "longDescription": "OKR Doing Agent installs a personal Logseq OKR Doing system, inventories and migrates old OKR assets safely, and turns completed work into copy-ready Daily Doing Markdown.",
+    "shortDescription": "Install, migrate, and review a local OKR Doing system.",
+    "longDescription": "OKR Doing Agent installs a personal Logseq OKR Doing system, inventories and migrates old OKR assets safely, turns completed work into copy-ready Daily Doing Markdown, and coaches evidence-based week, month, quarter, or year reviews with confirmed Logseq writeback.",
     "developerName": "Happy Logos",
     "category": "Productivity",
     "capabilities": [
@@ -17,8 +22,10 @@
       "Yinxiang/Evernote source validation",
       "OKR asset inventory",
       "confirmed migration",
-      "Daily Doing Markdown drafting"
+      "Daily Doing Markdown drafting",
+      "evidence-based periodic review",
+      "confirmed Logseq review writeback"
     ],
-    "defaultPrompt": "\u7528 OKR Doing Agent \u5e2e\u6211\u5b89\u88c5\u6216\u8fc1\u79fb OKR \u7cfb\u7edf\uff0c\u6216\u8005\u628a\u521a\u5b8c\u6210\u7684\u5de5\u4f5c\u6574\u7406\u6210\u53ef\u76f4\u63a5\u590d\u5236\u7684 Daily Doing\u3002"
+    "defaultPrompt": "\u7528 OKR Doing Agent \u5e2e\u6211\u5b89\u88c5\u6216\u8fc1\u79fb OKR \u7cfb\u7edf\uff0c\u6574\u7406 Daily Doing\uff0c\u6216\u8005\u4ece\u771f\u5b9e\u8bb0\u5f55\u5f00\u59cb\u4e00\u6b21\u5468\u3001\u6708\u3001\u5b63\u5ea6\u6216\u5e74\u5ea6\u590d\u76d8\u3002"
   }
 }
