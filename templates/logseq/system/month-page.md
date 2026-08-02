@@ -16,8 +16,8 @@ tags:: #OKR #月度计划
 - ## 周入口
 	- {{month_week_links}}
 - ## 月度复盘
-	- 做到了什么：
-	- 没做到什么：
-	- 新证据是什么：
-	- 判断如何更新：
-	- 下月第一步：
+	review-key:: review:month:{{year}}:{{month}}
+	review-schema:: okr-review/v1
+	review-status:: not-started
+	artifact:: 复盘一页纸
+	- 月底可调用 `okr-review`，先看写回预览，确认后再原位更新这一块。

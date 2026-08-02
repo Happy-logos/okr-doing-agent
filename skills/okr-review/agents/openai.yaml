@@ -1,0 +1,4 @@
+interface:
+  display_name: "OKR 复盘"
+  short_description: "从真实记录完成 Coach 复盘，并安全写回 Logseq 周期页"
+  default_prompt: "Use $okr-review to gather evidence for my chosen period, coach me through the review, produce a confirmed one-page report, and preview any Logseq writeback before asking for separate confirmation."

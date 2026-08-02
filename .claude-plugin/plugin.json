@@ -1,7 +1,7 @@
 {
   "name": "okr-doing-agent",
-  "version": "0.1.4",
-  "description": "Install and migrate a local OKR Doing system, or draft copy-ready Daily Doing Markdown.",
+  "version": "1.0.0",
+  "description": "Install and migrate a local OKR Doing system, review real periodic evidence, and safely write confirmed one-page reports to Logseq.",
   "author": {
     "name": "Happy Logos",
     "email": "chsmalltaoist@gmail.com"
@@ -9,5 +9,5 @@
   "homepage": "https://github.com/Happy-logos/okr-doing-agent",
   "repository": "https://github.com/Happy-logos/okr-doing-agent",
   "license": "MIT",
-  "keywords": ["okr", "logseq", "productivity", "goal-setting", "doing", "daily-doing", "markdown", "yinxiang", "evernote", "enml", "migration"]
+  "keywords": ["okr", "logseq", "productivity", "goal-setting", "doing", "daily-doing", "review", "coach", "markdown", "yinxiang", "evernote", "enml", "migration"]
 }

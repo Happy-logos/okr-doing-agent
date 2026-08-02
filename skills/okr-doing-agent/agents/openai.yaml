@@ -1,4 +1,4 @@
 interface:
   display_name: "OKR Doing Agent"
-  short_description: "安装与迁移 OKR 系统，并把完成的工作整理成 Daily Doing"
-  default_prompt: "Use $okr-doing-agent to install or migrate my OKR system, or draft a copy-ready Daily Doing entry."
+  short_description: "安装与迁移本地 OKR 系统，并用真实记录完成 Daily Doing 与周期复盘"
+  default_prompt: "Use $okr-doing-agent to install or migrate my OKR system, draft a Daily Doing entry, or review a period from real evidence."
