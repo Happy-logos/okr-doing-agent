@@ -3,6 +3,11 @@
 All notable changes to OKR Doing Agent are documented here.
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### Changed
+- Claude Code Marketplace 名称由 `candobear` 改为 `happy-logos-okr`,与 Codex 侧保持一致(`candobear` 让位给小能熊官方发布渠道 candobear/agent)。安装 ID 相应改为 `okr-doing-agent@happy-logos-okr`;已装用户需先 `claude plugin marketplace remove candobear`,再按 README 重新添加与安装。
+
 ## [1.0.0] - 2026-08-02
 
 ### Added

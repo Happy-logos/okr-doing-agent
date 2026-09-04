@@ -138,14 +138,14 @@ Dashboard 当前只生成 Markdown 写回预览。Logseq 会先定位既有周�
 
 ```bash
 claude plugin marketplace add Happy-logos/okr-doing-agent
-claude plugin install okr-doing-agent@candobear
+claude plugin install okr-doing-agent@happy-logos-okr
 ```
 
 或在 Claude Code 交互界面里(若该环境支持 `/plugin`):
 
 ```text
 /plugin marketplace add Happy-logos/okr-doing-agent
-/plugin install okr-doing-agent@candobear
+/plugin install okr-doing-agent@happy-logos-okr
 ```
 
 安装后**重启 Claude Code** 加载 skills,然后对它说「帮我安装 OKR 系统」即可触发。
