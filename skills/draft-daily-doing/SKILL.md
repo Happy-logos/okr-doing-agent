@@ -11,7 +11,7 @@ Convert a completed work session into one small Daily Doing moment. Preserve wha
 
 1. Read the current conversation first.
 2. Separate completed actions from discussion, proposals, and unverified plans.
-3. Choose one natural title that names the moment or result.
+3. Write the title as one sentence that still makes sense on its own when the user looks back at the day: the object plus what got done or decided, about 30 Chinese characters or fewer. Use 「定了：……」 for a decision, 「读《……》：……」 for something learned, 「卡住：……」 for a blocker. The Daily Doing review shows only this line, so a topic without a result (「同步 ③-2 手机拉取」), a bare book title, a date header, a project name, or a list item is not a title.
 4. Keep 2-5 bullets covering only useful facts:
    - what changed or was completed
    - the concrete result
@@ -27,7 +27,8 @@ By default, the final answer must contain exactly one fenced `markdown` block an
 
 Inside the block:
 
-- Put the natural title on the first line. Do not prefix it with `#`.
+- Put the title sentence on the first line. Do not prefix it with `#` or `-`, and do not put a date or project name there.
+- One block covers one piece of work. If the conversation advanced several unrelated things, write one block per thing instead of a whole-day summary.
 - Leave one blank line after the title.
 - Use short Markdown bullets for the body.
 - Do not use blockquotes, tables, frontmatter, or nested explanatory sections.
@@ -41,7 +42,7 @@ Use this exact shape:
 
 ````markdown
 ```markdown
-自然标题
+对象：做成了什么（或「定了：……」）
 
 - 已完成的事实。
 - 得到的结果。
