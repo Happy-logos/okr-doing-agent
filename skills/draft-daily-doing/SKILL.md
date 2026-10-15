@@ -10,14 +10,17 @@ Convert a completed work session into one small Daily Doing moment. Preserve wha
 ## Workflow
 
 1. Read the current conversation first.
-2. Separate completed actions from discussion, proposals, and unverified plans.
-3. Write the title as one sentence that still makes sense on its own when the user looks back at the day: the object plus what got done or decided, about 30 Chinese characters or fewer. Use 「定了：……」 for a decision, 「读《……》：……」 for something learned, 「卡住：……」 for a blocker. The Daily Doing review shows only this line, so a topic without a result (「同步 ③-2 手机拉取」), a bare book title, a date header, a project name, or a list item is not a title.
-4. Keep 2-5 bullets covering only useful facts:
+2. Before drafting, look at the user's most recent Daily Doing entry of the same kind (in the conversation, a pasted example, or a local record the user has already authorized) and match its format. If none is at hand, follow the output contract below; do not guess a different shape.
+3. Separate completed actions from discussion, proposals, and unverified plans.
+4. Write the title as one sentence that still makes sense on its own when the user looks back at the day: the object plus what got done or decided, about 30 Chinese characters or fewer. Use 「定了：……」 for a decision, 「读《……》：……」 for something learned, 「卡住：……」 for a blocker. The Daily Doing review shows only this line, so a topic without a result (「同步 ③-2 手机拉取」), a bare book title, a date header, a project name, or a list item is not a title.
+5. Keep 2-5 bullets covering only useful facts:
    - what changed or was completed
    - the concrete result
    - evidence or verification, when available
-5. Remove implementation chatter, repeated history, and speculative next steps.
-6. Return the copy-ready Markdown using the output contract below.
+   When the work belongs to a work item, name its ID (`OD-171`) in the body.
+6. Work out the collaboration time segments from evidence in the conversation (see 协作时间行 below).
+7. Remove implementation chatter, repeated history, and speculative next steps.
+8. Return the copy-ready Markdown using the output contract below.
 
 Do not scan the whole workspace when the conversation already contains enough evidence. Read a named artifact only when needed to confirm a fact.
 
@@ -31,8 +34,10 @@ Inside the block:
 - One block covers one piece of work. If the conversation advanced several unrelated things, write one block per thing instead of a whole-day summary.
 - Leave one blank line after the title.
 - Use short Markdown bullets for the body.
+- When the work hangs under a work item, write its ID (`OD-N`) in the body, e.g. 「随 OD-171 一起上线 f38133c3」. Use only IDs that appear in the conversation; never invent one.
+- End the block with the collaboration time lines, one line per segment: `协作 HH:MM–HH:MM` (en dash, 24-hour clock), e.g. `协作 16:14–16:37`. No blank line between the last bullet and the first time line, no bullet marker in front.
 - Do not use blockquotes, tables, frontmatter, or nested explanatory sections.
-- Do not include the date; the Daily Doing page already supplies it.
+- Do not include the date, not even in the time lines; the Daily Doing page already supplies it.
 - Do not add “下一步行动”, “复盘”, “启发”, or “学到了什么” unless the user explicitly asks.
 - Do not invent an O, project, 3 Things, To-do, result, or verification.
 - Do not place relation suggestions in the body unless the user explicitly asks for them.
@@ -46,11 +51,22 @@ Use this exact shape:
 
 - 已完成的事实。
 - 得到的结果。
-- 验证或证据。
+- 验证或证据；挂在事项下时写出 OD-N。
+协作 HH:MM–HH:MM
+协作 HH:MM–HH:MM
 ```
 ````
 
 The fenced block matters: rendered Markdown, a blockquote, or ordinary prose is not considered copy-ready output.
+
+## 协作时间行
+
+The user records time with these lines; an entry without them loses that record.
+
+- One line per segment of actual work. A stretch spent waiting on someone else, or not working on this at all, is not counted: split it into two segments.
+- Infer start and end from evidence in the conversation: when the user sent a screenshot or message, git commit times, deploy times, the moment of acceptance. Check `git log --format='%ci %s'` when commits are involved.
+- If a segment's times cannot be inferred, ask one short question — 「这段大概几点到几点？」 — instead of making them up. Never write a placeholder time.
+- Still no date: write only `HH:MM–HH:MM`.
 
 ## Content Rules
 
@@ -95,14 +111,17 @@ Correct output:
 
 ````markdown
 ```markdown
-OKR Dashboard：完成本周工作台的一轮交互收敛
+项目页事项卡上的「本周」改成周号：换周后还看得出哪周排上过
 
-- 统一 3 Things 与 Daily Doing 的连接方式。
-- 历史周可以回看并分别复盘 Thing 与 To-do。
-- To-do 支持每周重复，相关操作收进三点菜单。
-- 迁移测试页已通过脚本静态检查。
+- 卡上不再写「本周」，改写周号：当周是绿色 W41，以前的周是灰色；挂过好几周的只写最近一周，鼠标停上去能看到全部周。
+- 事项详情里多一行「接到过 · W39 · W40」；当周刚接上或撤回，卡片马上变，不用刷新；周号从各周 3 Things 的关系现算，不另存数据。
+- 用 10-02 的备份在独立浏览器里跑新加的检查，5 项全过；随 OD-171 一起上线 f38133c3。
+协作 16:14–16:37
+协作 17:41–17:43
 ```
 ````
+
+The two time lines are two segments: the gap between 16:37 and 17:41 was waiting, so it is not counted.
 
 Incorrect:
 
@@ -110,3 +129,6 @@ Incorrect:
 - a prose summary followed by a second copy
 - “建议关联” mixed into the body
 - planned work presented as completed
+- no `协作 HH:MM–HH:MM` line at the end, or one merged line that covers the waiting gap
+- a time line with a made-up time, or with a date
+- the work item's ID left out when the conversation names it

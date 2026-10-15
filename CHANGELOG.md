@@ -7,6 +7,7 @@ All notable changes to OKR Doing Agent are documented here.
 
 ### Changed
 - Claude Code Marketplace 名称由 `candobear` 改为 `happy-logos-okr`,与 Codex 侧保持一致(`candobear` 让位给小能熊官方发布渠道 candobear/agent)。安装 ID 相应改为 `okr-doing-agent@happy-logos-okr`;已装用户需先 `claude plugin marketplace remove candobear`,再按 README 重新添加与安装。
+- `draft-daily-doing`:正文末尾逐段写协作时间行 `协作 HH:MM–HH:MM`(等待的空档拆成两段,时间从对话证据推,推不出就问,不编);做的事挂在事项下时正文写出 `OD-N`;起草前先对照用户最近一条同类 Daily 的格式。模板与 Regression Example 同步改成带时间行的样子。
 
 ## [1.0.0] - 2026-08-02
 
